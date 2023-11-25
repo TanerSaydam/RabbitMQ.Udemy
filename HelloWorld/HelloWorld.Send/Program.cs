@@ -7,6 +7,9 @@ internal class Program
 {
     static void Main(string[] args)
     {
+        Console.WriteLine(" Press [enter] to send message");
+        Console.ReadLine();
+
         var factory = new ConnectionFactory();
         factory.HostName = "localhost";
         factory.Port = 5672;

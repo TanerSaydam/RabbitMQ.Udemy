@@ -15,3 +15,4 @@ C:\Test\RabbitMQ\HelloWorld\HelloWorld.Send\obj\Debug\net8.0\refint\HelloWorld.S
 C:\Test\RabbitMQ\HelloWorld\HelloWorld.Send\obj\Debug\net8.0\HelloWorld.Send.pdb
 C:\Test\RabbitMQ\HelloWorld\HelloWorld.Send\obj\Debug\net8.0\HelloWorld.Send.genruntimeconfig.cache
 C:\Test\RabbitMQ\HelloWorld\HelloWorld.Send\obj\Debug\net8.0\ref\HelloWorld.Send.dll
+C:\Test\RabbitMQ\HelloWorld\HelloWorld.Send\obj\Debug\net8.0\HelloWorld.Send.sourcelink.json
