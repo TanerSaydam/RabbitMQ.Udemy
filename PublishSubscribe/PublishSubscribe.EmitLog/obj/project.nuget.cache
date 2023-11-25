@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "E40FNu7gQn+kPuCSYOB8yHOzE4g95Y7LpFh5fFkQOknA4j6MS8I7PJHefZ2cSCsy0eTiZYwV0snDWcQ87HloOA==",
+  "dgSpecHash": "zkQIXkbAWHgiWro6z9QPqst1Yvbe+MSX4X23XZ1E6+h3wn9k/uxWT/GDN4MTfzwgtST+qIcxwA8pw6FZ1E5T3w==",
   "success": true,
-  "projectFilePath": "C:\\Test\\RabbitMQ\\PublishSubscribe\\PublishSubscribe.EmitLog\\PublishSubscribe.EmitLog.csproj",
+  "projectFilePath": "C:\\RabbitMQ\\PublishSubscribe\\PublishSubscribe.EmitLog\\PublishSubscribe.EmitLog.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\taner\\.nuget\\packages\\rabbitmq.client\\6.7.0\\rabbitmq.client.6.7.0.nupkg.sha512",
-    "C:\\Users\\taner\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512",
-    "C:\\Users\\taner\\.nuget\\packages\\system.threading.channels\\7.0.0\\system.threading.channels.7.0.0.nupkg.sha512"
+    "C:\\Users\\tugay\\.nuget\\packages\\rabbitmq.client\\6.7.0\\rabbitmq.client.6.7.0.nupkg.sha512",
+    "C:\\Users\\tugay\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512",
+    "C:\\Users\\tugay\\.nuget\\packages\\system.threading.channels\\7.0.0\\system.threading.channels.7.0.0.nupkg.sha512"
   ],
   "logs": []
 }
