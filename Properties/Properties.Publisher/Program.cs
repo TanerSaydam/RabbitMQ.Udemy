@@ -1,4 +1,5 @@
 ﻿using RabbitMQ.Client;
+using System.Text;
 
 namespace Properties.Publisher;
 
@@ -28,9 +29,37 @@ internal class Program
 
         channel.QueueDeclare(
             queue: "hello",
-            durable: false,
+            durable: true,
             exclusive: false,
             autoDelete: false,
             arguments: arguments);
+
+        var properties = channel.CreateBasicProperties();
+
+        #region basicProperties
+        properties.Persistent = true; // Mesajın kalıcı olarak işaretlenmesi. True kalıcı false geçici
+        properties.ContentType = "application/json"; // Mesajın içerik türünü ayarlar
+        properties.ContentEncoding = "UTF-8"; // Mesajın içerik kodlamasını ayarlar
+        properties.Priority = 5; // Mesajın önceliğini gösterir, daha yüksek öncelikli mesajlar önce işlenir. (0-9 arasında bir değer)
+        properties.CorrelationId = Guid.NewGuid().ToString(); // İstek-yanıt işlemlerinde, bir isteğin hangi yanıtla ilişkili olduğunu belirlemek için kullanılır.
+        properties.ReplyTo = "reply_queue"; // Yanıtın gönderileceği kuyruk ismini belirtir.
+        properties.Expiration = "60000"; // Mesajın son kullanma süresi (milisaniye cinsinden)
+        properties.MessageId = Guid.NewGuid().ToString(); // Mesajın benzersiz bir tanımlayıcısı.
+        properties.Timestamp = new AmqpTimestamp(DateTimeOffset.UtcNow.ToUnixTimeSeconds());
+        // Mesajın oluşturulduğu zaman damgası.
+        properties.Type = "command"; // Mesajın türünü tanımlar, örneğin bir komut veya event.
+        properties.UserId = "user123"; // Mesajı gönderen kullanıcının kimliğini belirtir.
+        properties.AppId = "app123"; // Mesajı gönderen uygulamanın kimliğini belirtir.
+        #endregion
+
+        string message = "{data: 'Hello World!'}";
+        var body = Encoding.UTF8.GetBytes(message);
+
+        channel.BasicPublish(exchange: "",
+                             routingKey: "test_queue",
+                             basicProperties: properties,
+                             body: body);
+
+        Console.WriteLine(" [x] Sent {0}", message);
     }
 }
